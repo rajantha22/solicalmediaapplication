@@ -1,5 +1,7 @@
 import { observer } from "mobx-react-lite";
 import React from "react";
+import { useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 import { Button, Card, Image } from "semantic-ui-react";
 import LoadingComponent from "../../../layout/loadingComponent";
 import { useStore } from "../../../stores/store";
@@ -8,10 +10,15 @@ export default observer(function ActivityDetails() {
   const { activityStore } = useStore();
   const {
     selectedActivity: activity,
-    openForm,
-    cancelSelectedActivity,
+    loadActivity,
+    loadingInitial,
   } = activityStore;
-  if (!activity)
+  const { id } = useParams<{ id: string }>();
+
+  useEffect(() => {
+    if (id) loadActivity(id);
+  }, [id, loadActivity]);
+  if (loadingInitial || !activity)
     return (
       <LoadingComponent
         inverted={true}
@@ -31,17 +38,15 @@ export default observer(function ActivityDetails() {
       <Card.Content extra>
         <Button.Group width="2">
           <Button
-            onClick={() => {
-              openForm(activity.id);
-            }}
+            as={Link}
+            to={`/manage/${activity.id}`}
             basic
             color="blue"
             content="Edit"
           ></Button>
           <Button
-            onClick={() => {
-              cancelSelectedActivity();
-            }}
+            as={Link}
+            to="/activities"
             basic
             color="grey"
             content="Cancel"
