@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Udemy\\Reactivities\\api\\API.csproj": {}
+    "D:\\Udemy\\Reactivities\\API\\API.csproj": {}
   },
   "projects": {
-    "D:\\Udemy\\Reactivities\\api\\API.csproj": {
+    "D:\\Udemy\\Reactivities\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Udemy\\Reactivities\\api\\API.csproj",
+        "projectUniqueName": "D:\\Udemy\\Reactivities\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "D:\\Udemy\\Reactivities\\api\\API.csproj",
+        "projectPath": "D:\\Udemy\\Reactivities\\API\\API.csproj",
         "packagesPath": "C:\\Users\\Rajantha\\.nuget\\packages\\",
-        "outputPath": "D:\\Udemy\\Reactivities\\api\\obj\\",
+        "outputPath": "D:\\Udemy\\Reactivities\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Rajantha\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -123,6 +123,10 @@
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[8.1.0, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[10.1.0, )"
             },
             "MediatR.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
